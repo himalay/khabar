@@ -1,0 +1,37 @@
+article > * {
+  min-width: 0;
+}
+
+article > h1 {
+  font-family: Lucida Grande;
+}
+
+article img {
+  max-width: 100%;
+}
+
+article a[href*='build'] > img,
+article img[data-canonical-src*='badge'],
+article img[src*='badge'],
+article img[src*='icon'],
+article img[src*='emoji'] {
+  max-height: 20px;
+}
+
+article a[href*='ref'] > img {
+  max-height: 96px;
+}
+
+article a {
+  margin: 0;
+  color: #2979ff;
+  text-decoration: none;
+}
+
+article a:hover {
+  text-decoration: underline;
+}
+
+article pre {
+  overflow: auto;
+}

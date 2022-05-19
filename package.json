@@ -1,0 +1,81 @@
+{
+  "name": "khabar",
+  "version": "1.0.0",
+  "homepage": "https://khabar.dev.page/",
+  "description": "Latest news and updates for hackers and innovators.",
+  "keywords": [
+    "khabar",
+    "react",
+    "mui",
+    "pwa",
+    "vite"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/himalay/khabar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/himalay/khabar/issues"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "prettier ./src --write --loglevel warn; eslint ./src --cache --fix",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
+      "prettier --write"
+    ],
+    "src/**/*.{js,jsx,ts,tsx,json}": [
+      "eslint --fix"
+    ]
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
+    "@mui/icons-material": "^5.8.0",
+    "@mui/material": "^5.8.0",
+    "axios": "^0.27.2",
+    "axios-cache-adapter": "^2.7.3",
+    "localforage": "^1.10.0",
+    "notistack": "^2.0.5",
+    "react": "^18.1.0",
+    "react-device-detect": "^2.2.2",
+    "react-dom": "^18.1.0",
+    "react-easy-sort": "^1.4.1",
+    "react-error-boundary": "^3.1.4",
+    "react-helmet-async": "^1.3.0",
+    "react-router-dom": "^6.3.0",
+    "react-swipeable-views": "^0.14.0",
+    "react-zoom-pan-pinch": "^2.1.3",
+    "recoil": "^0.7.2",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^3.2.0",
+    "@types/node": "^17.0.35",
+    "@types/react": "^18.0.9",
+    "@types/react-dom": "^18.0.4",
+    "@types/react-swipeable-views": "^0.13.1",
+    "@types/uuid": "^8.3.4",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "@vitejs/plugin-react": "^1.3.2",
+    "eslint": "^8.15.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.30.0",
+    "eslint-plugin-react-hooks": "^4.5.0",
+    "https-localhost": "^4.7.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^12.4.1",
+    "prettier": "^2.6.2",
+    "typescript": "^4.6.4",
+    "vite": "^2.9.9",
+    "vite-plugin-pwa": "^0.12.0"
+  }
+}
