@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "dev.pages.khabar",
+            "sha256_cert_fingerprints": [
+                "35:98:22:26:8F:89:46:8C:7C:27:66:94:57:A5:9C:02:2C:F5:6B:3D:95:CB:CA:9A:D0:B0:D5:6C:3B:5A:0D:26"
+            ]
+        }
+    }
+]
