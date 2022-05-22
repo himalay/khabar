@@ -184,7 +184,7 @@ function Feeds() {
             <ListItem>
               <ListItemAvatar>
                 <Avatar>
-                  <img alt={x.title} src={x.icon} style={{ height: 40 }} />
+                  <img alt={x.title} src={x.icon} style={{ height: 40 }} loading="lazy" />
                 </Avatar>
               </ListItemAvatar>
               <ListItemText primary={x.title} secondary={x.description} />

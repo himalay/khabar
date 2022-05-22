@@ -33,6 +33,7 @@ const ArticleCard: FC<ArticleCardProps> = ({ article, hidden }) => {
                 alt={source.name}
                 src={`https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&url=${source.targetUrl}&size=64`}
                 style={{ height: 24 }}
+                loading="lazy"
               />
             </Avatar>
           }
