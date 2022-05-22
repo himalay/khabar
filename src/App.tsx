@@ -10,6 +10,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 function App() {
   useServiceWorker()
+
   return (
     <Fragment>
       <CssBaseline />

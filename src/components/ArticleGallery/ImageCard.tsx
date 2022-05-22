@@ -2,12 +2,13 @@ import AuthorName from './AuthorName'
 import CardActionButtons from './CardActionButtons'
 import { Article } from './types'
 import FullscreenDialog from '@/components/ArticleGallery/FullscreenDialog'
+import { useUrlHashState } from '@/hooks/useUrlHashState'
 import timeAgo from '@/utils/timeAgo'
 import Box from '@mui/material/Box'
 import ImageListItem from '@mui/material/ImageListItem'
 import ImageListItemBar from '@mui/material/ImageListItemBar'
 import Paper from '@mui/material/Paper'
-import { FC, memo, useState } from 'react'
+import { FC, memo } from 'react'
 
 interface ImageCardProps {
   article: Article
@@ -16,8 +17,10 @@ interface ImageCardProps {
 
 const ImageCard: FC<ImageCardProps> = ({ article, hidden }) => {
   const { title, image, source } = article
-  const [open, setOpen] = useState(false)
-  const imageClickHandler = () => setOpen(true)
+  const [openImageViewer, setOpenImageViewer] = useUrlHashState('#image' + article._id)
+
+  const imageClickHandler = () => setOpenImageViewer(true)
+
   return (
     <Box component="li" hidden={hidden}>
       <ImageListItem component={Paper} style={{ borderRadius: 4, width: '100%' }}>
@@ -44,8 +47,9 @@ const ImageCard: FC<ImageCardProps> = ({ article, hidden }) => {
           actionIcon={<CardActionButtons article={article} />}
         />
       </ImageListItem>
-      <FullscreenDialog open={open} article={article} handleClose={() => setOpen(false)} />
+      <FullscreenDialog open={openImageViewer} article={article} handleClose={() => setOpenImageViewer(false)} />
     </Box>
   )
 }
+
 export default memo(ImageCard)
