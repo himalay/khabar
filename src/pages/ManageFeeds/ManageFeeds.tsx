@@ -19,6 +19,7 @@ import ListItemAvatar from '@mui/material/ListItemAvatar'
 import ListItemText from '@mui/material/ListItemText'
 import Switch from '@mui/material/Switch'
 import Typography from '@mui/material/Typography'
+import debounce from '@mui/utils/debounce'
 import { ChangeEvent, Fragment, SetStateAction, useCallback, useEffect, useState } from 'react'
 import { isMobile } from 'react-device-detect'
 
@@ -36,9 +37,9 @@ function Feeds() {
   const [subscribedFeedIds, setSubscribedFeedIds] = useState<string[]>(subscribedFeeds.map((x) => x.id))
   const [searchQuery, setSearchQuery] = useState<string>('')
 
-  const searchHandler = (e: ChangeEvent<HTMLInputElement>) => {
+  const searchHandler = debounce((e: ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value)
-  }
+  }, 500)
 
   const tagClickHandler = (t: Tag) => {
     setTag(t)
@@ -131,7 +132,6 @@ function Feeds() {
           placeholder="Type website name, topic, or URL"
           inputProps={{ 'aria-label': 'search' }}
           onChange={searchHandler}
-          value={searchQuery}
         />
         {!!searchQuery && (
           <IconButton color="inherit" onClick={() => setSearchQuery('')} style={{ position: 'absolute', right: 0 }}>
