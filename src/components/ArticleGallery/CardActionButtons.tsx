@@ -32,18 +32,23 @@ const CardActionButtons: FC<CardActionButtonsProps> = ({ article }) => {
   return (
     <div style={{ whiteSpace: 'nowrap', marginRight: 11 }}>
       {!!navigator.share && (
-        <IconButton onClick={getHandleShare(article)} size="small" color="secondary">
-          <ShareIcon fontSize="small" />
-        </IconButton>
+        <>
+          <IconButton onClick={getHandleShare(article)} size="small" color="secondary">
+            <ShareIcon fontSize="small" />
+          </IconButton>
+          <Typography sx={{ display: 'inline' }} color="text.secondary">
+            |
+          </Typography>
+        </>
       )}
       {!!hasCount && (
         <Button disabled={isSameUrl} href={article.source.sourceUrl} target="_blank" size="small" color="secondary">
-          <ThumbUpIcon sx={{ fontSize: 14, mr: 0.5 }} />
+          <ThumbUpIcon sx={{ fontSize: 18, mr: 0.5 }} />
           {article.source.likesCount}
-          <CommentIcon sx={{ fontSize: 14, ml: 1, mr: 0.5 }} /> {article.source.commentsCount}
+          <CommentIcon sx={{ fontSize: 18, ml: 1, mr: 0.5 }} /> {article.source.commentsCount}
           {!!article.source.viewsCount && (
             <>
-              <VisibilityIcon sx={{ fontSize: 14, ml: 1, mr: 0.5 }} /> {article.source.viewsCount}
+              <VisibilityIcon sx={{ fontSize: 18, ml: 1, mr: 0.5 }} /> {article.source.viewsCount}
             </>
           )}
         </Button>
@@ -54,7 +59,7 @@ const CardActionButtons: FC<CardActionButtonsProps> = ({ article }) => {
         </Typography>
       )}
       <IconButton href={article.source.targetUrl} target="_blank" size="small" color="secondary">
-        <LinkIcon fontSize="small" />
+        <LinkIcon />
       </IconButton>
     </div>
   )
