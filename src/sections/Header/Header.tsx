@@ -80,7 +80,7 @@ function Header() {
                   <path d="M20.09 30.42l-6.1 3.53v18.87l58.8 33.95V60.85z" fill="#ef8769" />
                   <path d="M72.79 0l-58.8 33.95v18.87l6.1 3.53 52.7-30.43z" fill="#f4b691" />
                 </SvgIcon>
-                <Typography variant="h6" color="inherit" noWrap sx={{ flex: 1 }}>
+                <Typography variant="h6" color="inherit" noWrap sx={{ flex: 1, textTransform: 'uppercase' }}>
                   {title}
                 </Typography>
               </>
