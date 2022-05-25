@@ -93,7 +93,7 @@ function Home() {
         >
           {subscribedFeeds.map((x, i) => (
             <div key={'tabpanel' + x.id} role="tabpanel" hidden={feedIndex !== i} id={`full-width-tabpanel-${i}`}>
-              <Typography variant="h4" color="inherit" component="div" sx={{ mt: 1 }} gutterBottom noWrap>
+              <Typography variant="h6" color="inherit" component="div" sx={{ mt: 1 }} gutterBottom noWrap>
                 {x.title}
               </Typography>
               {feedIndex === i && !!articles.length && articles[0].source.name === x.name && (
